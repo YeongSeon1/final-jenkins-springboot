@@ -12,7 +12,7 @@ pipeline {
         stage('deploy') { 
             steps { 
                  sh 'aws elasticbeanstalk create-application-version --region us-east-1 --application-name final-jenkins-springboot --version-label ${BUILD_TAG} --source-bundle S3Bucket="final-jenkins-springboot-ys",S3Key="application.war"' 
-                 sh 'aws elasticbeanstalk update-environment --region us-east-1 --environment-name final-jenkins-springboot --version-label ${BUILD_TAG}' 
+                 sh 'aws elasticbeanstalk update-environment --region us-east-1 --environment-name final-jenkins-springboot-ys --version-label ${BUILD_TAG}' 
             } 
         } 
     } 
